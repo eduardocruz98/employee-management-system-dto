@@ -1,0 +1,165 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-7">
+      <div class="card shadow border-0">
+        <div class="card-header text-white text-center" style="background-color: #0d6efd">
+          <h3 class="mb-0">Editar Empleado</h3>
+        </div>
+
+        <div class="card-body">
+          <form #empleadoForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  name="nombre"
+                  [(ngModel)]="empleado.nombre"
+                  placeholder="Ingrese el nombre del empleado"
+                  required
+                  maxlength="50"
+                  #nombre="ngModel"
+                />
+
+                @if (nombre.invalid && nombre.touched) {
+                  <div class="text-danger mt-1">
+                    El nombre es obligatorio y no puede superar 50 caracteres.
+                  </div>
+                }
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="apellido" class="form-label">Apellidos</label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apellido"
+                  name="apellido"
+                  [(ngModel)]="empleado.apellido"
+                  placeholder="Ingrese el apellido del empleado"
+                  required
+                  maxlength="50"
+                  #apellido="ngModel"
+                />
+
+                @if (apellido.invalid && apellido.touched) {
+                  <div class="text-danger mt-1">
+                    El apellido es obligatorio y no puede superar 50 caracteres.
+                  </div>
+                }
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo</label>
+
+              <input
+                type="email"
+                class="form-control"
+                id="correo"
+                name="correo"
+                [(ngModel)]="empleado.correo"
+                placeholder="Ingrese el correo del empleado"
+                required
+                email
+                maxlength="100"
+                #correo="ngModel"
+              />
+
+              @if (correo.invalid && correo.touched) {
+                <div class="text-danger mt-1">Correo electrónico inválido.</div>
+              }
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="telefono"
+                  name="telefono"
+                  [(ngModel)]="empleado.telefono"
+                  placeholder="Ingrese el teléfono del empleado"
+                  required
+                  minlength="10"
+                  maxlength="15"
+                  #telefono="ngModel"
+                />
+
+                @if (telefono.invalid && telefono.touched) {
+                  <div class="text-danger mt-1">
+                    El teléfono debe tener entre 10 y 15 caracteres.
+                  </div>
+                }
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="salario" class="form-label">Salario</label>
+
+                <input
+                  type="number"
+                  step="any"
+                  class="form-control"
+                  id="salario"
+                  name="salario"
+                  [(ngModel)]="empleado.salario"
+                  placeholder="Ingrese el salario del empleado"
+                  required
+                  min="1"
+                  #salario="ngModel"
+                />
+
+                @if (salario.invalid && salario.touched) {
+                  <div class="text-danger mt-1">El salario debe ser mayor a cero.</div>
+                }
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="departamento" class="form-label"> Departamento </label>
+
+              <select
+                class="form-select"
+                id="departamento"
+                name="idDepartamento"
+                [(ngModel)]="empleado.idDepartamento"
+                required
+                #departamento="ngModel"
+              >
+                <option [ngValue]="null" disabled>Seleccione un departamento</option>
+
+                @for (departamento of departamentos; track departamento.idDepartamento) {
+                  <option [ngValue]="departamento.idDepartamento">
+                    {{ departamento.nombre }}
+                  </option>
+                }
+              </select>
+
+              @if (departamento.invalid && departamento.touched) {
+                <div class="text-danger mt-1">Debe seleccionar un departamento.</div>
+              }
+            </div>
+
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn btn-warning btn-sm me-3"
+                [disabled]="empleadoForm.invalid"
+              >
+                Actualizar Empleado
+              </button>
+
+              <a href="/" class="btn btn-danger btn-sm"> Regresar </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

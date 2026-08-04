@@ -1,0 +1,143 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-7">
+      <div class="card shadow border-0">
+        <div class="card-header text-white text-center" style="background-color: #0d6efd">
+          <h3 class="mb-0">Agregar Empleado</h3>
+        </div>
+
+        <div class="card-body">
+          <form #empleadoForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Nombre</label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  name="nombre"
+                  [(ngModel)]="empleado.nombre"
+                  required
+                  maxlength="50"
+                  #nombre="ngModel"
+                />
+
+                @if (nombre.invalid && nombre.touched) {
+                  <div class="text-danger">El nombre es obligatorio.</div>
+                }
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Apellido</label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  name="apellido"
+                  [(ngModel)]="empleado.apellido"
+                  required
+                  maxlength="50"
+                  #apellido="ngModel"
+                />
+
+                @if (apellido.invalid && apellido.touched) {
+                  <div class="text-danger">El apellido es obligatorio.</div>
+                }
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Correo</label>
+
+              <input
+                type="email"
+                class="form-control"
+                name="correo"
+                [(ngModel)]="empleado.correo"
+                required
+                maxlength="100"
+                email
+                #correo="ngModel"
+              />
+
+              @if (correo.invalid && correo.touched) {
+                <div class="text-danger">Correo inválido.</div>
+              }
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Teléfono</label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  name="telefono"
+                  [(ngModel)]="empleado.telefono"
+                  minlength="10"
+                  maxlength="15"
+                  required
+                  #telefono="ngModel"
+                />
+
+                @if (telefono.invalid && telefono.touched) {
+                  <div class="text-danger">El teléfono debe contener entre 10 y 15 caracteres.</div>
+                }
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Salario</label>
+
+                <input
+                  type="number"
+                  class="form-control"
+                  name="salario"
+                  [(ngModel)]="empleado.salario"
+                  min="1"
+                  required
+                  #salario="ngModel"
+                />
+
+                @if (salario.invalid && salario.touched) {
+                  <div class="text-danger">El salario debe ser mayor que cero.</div>
+                }
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Departamento</label>
+
+              <select
+                class="form-select"
+                name="idDepartamento"
+                [(ngModel)]="empleado.idDepartamento"
+                required
+                #departamento="ngModel"
+              >
+                <option [ngValue]="null" disabled>Seleccione un departamento</option>
+
+                @for (departamento of departamentos; track departamento.idDepartamento) {
+                  <option [ngValue]="departamento.idDepartamento">
+                    {{ departamento.nombre }}
+                  </option>
+                }
+              </select>
+
+              @if (departamento.invalid && departamento.touched) {
+                <div class="text-danger">Debe seleccionar un departamento.</div>
+              }
+            </div>
+
+            <div class="text-center">
+              <button class="btn btn-warning me-2" type="submit" [disabled]="empleadoForm.invalid">
+                Guardar Empleado
+              </button>
+
+              <a href="/empleados" class="btn btn-danger"> Regresar </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

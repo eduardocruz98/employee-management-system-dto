@@ -1,0 +1,21 @@
+# Angular
+employesFrontend/node_modules/
+employesFrontend/dist/
+employesFrontend/.angular/
+
+# Spring Boot
+employesBackend/target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
+
+# Logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

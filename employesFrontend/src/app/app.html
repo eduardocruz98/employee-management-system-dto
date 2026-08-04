@@ -1,0 +1,36 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow py-4">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold fs-2" routerLink="empleados">👨‍💼 Sistema de Gestión de Empleados</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fs-5">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="empleados" routerLinkActive="active">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="agregar-empleado" routerLinkActive="active">Agregar Empleado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="agregar-departamento" routerLinkActive="active">Agregar Departamento</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- Ya se va a mandar a llamar con  routerloulet->
+<!-- <app-listar-empleados/> -->
+ <div class="container">
+  <router-outlet></router-outlet>
+ </div>

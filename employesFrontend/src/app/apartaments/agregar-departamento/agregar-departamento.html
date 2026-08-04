@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-7">
+      <div class="card shadow border-0">
+        <div class="card-header text-white text-center" style="background-color: #0d6efd">
+          <h3 class="mb-0">Agregar Departamento</h3>
+        </div>
+
+        <div class="card-body">
+          <form #departamentoForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="nombre" class="form-label"> Nombre </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+                [(ngModel)]="departamento.nombre"
+                placeholder="Ingrese el nombre del departamento"
+                required
+                maxlength="50"
+                #nombre="ngModel"
+              />
+
+              @if (nombre.invalid && nombre.touched) {
+                <div class="text-danger mt-1">El nombre del departamento es obligatorio.</div>
+              }
+            </div>
+
+            <div class="text-center">
+              <button
+                class="btn btn-warning btn-sm me-3"
+                type="submit"
+                [disabled]="departamentoForm.invalid"
+              >
+                Guardar Departamento
+              </button>
+
+              <a href="/" class="btn btn-danger btn-sm"> Regresar </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <app-listar-departamento></app-listar-departamento>
+</div>
