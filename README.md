@@ -11,6 +11,23 @@ Hibernate, MySQL y Angular, aplicando buenas prácticas de programación, una ar
 para desacoplar la comunicación entre el backend y el frontend.
 
 ---
+## Capturas de pantalla
+
+### Lista de empleados
+
+![Lista de empleados](employes system 1.png)
+
+### Agregar empleado
+
+![Agregar empleado](employes system 2.png)
+
+### Editar empleado
+
+![Editar empleado](employes system 3.png)
+
+### Agregar departamento
+
+![Agregar departamento](employes system 4.png)
 
 # Tecnologías utilizadas
 
