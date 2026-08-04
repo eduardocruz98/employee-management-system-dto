@@ -14,20 +14,40 @@ para desacoplar la comunicación entre el backend y el frontend.
 ## Capturas de pantalla
 
 ### Lista de empleados
+<p align="center">
+  <img src=employes system 1.png" width="700">
+</p>
 
-![Lista de empleados](employes system 1.png)
+<p align="center">
+  <b>Figura 1.</b> Pantalla principal.
+</p>
 
 ### Agregar empleado
+<p align="center">
+  <img src=employes system 2.png" width="700">
+</p>
 
-![Agregar empleado](employes system 2.png)
+<p align="center">
+  <b>Figura 2.</b> Agregar empleado.
+</p>
 
 ### Editar empleado
+<p align="center">
+  <img src=employes system 3.png" width="700">
+</p>
 
-![Editar empleado](employes system 3.png)
+<p align="center">
+  <b>Figura 3.</b> Editar empleado.
+</p>
 
 ### Agregar departamento
+<p align="center">
+  <img src=employes system 4.png" width="700">
+</p>
 
-![Agregar departamento](employes system 4.png)
+<p align="center">
+  <b>Figura 1.</b> Agregar departamento.
+</p>
 
 # Tecnologías utilizadas
 
