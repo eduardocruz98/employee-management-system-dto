@@ -11,43 +11,45 @@ Hibernate, MySQL y Angular, aplicando buenas prácticas de programación, una ar
 para desacoplar la comunicación entre el backend y el frontend.
 
 ---
-## Capturas de pantalla
+# Capturas de pantalla
 
-### Lista de empleados
+## Lista de empleados
 <p align="center">
-  <img src=employes system 1.png" width="700">
+  <img src="employes system 1.png" width="700">
 </p>
 
 <p align="center">
   <b>Figura 1.</b> Pantalla principal.
 </p>
 
-### Agregar empleado
+## Agregar empleado
 <p align="center">
-  <img src=employes system 2.png" width="700">
+  <img src="employes system 2.png" width="700">
 </p>
 
 <p align="center">
   <b>Figura 2.</b> Agregar empleado.
 </p>
 
-### Editar empleado
+## Editar empleado
 <p align="center">
-  <img src=employes system 3.png" width="700">
+  <img src="employes system 3.png" width="700">
 </p>
 
 <p align="center">
   <b>Figura 3.</b> Editar empleado.
 </p>
 
-### Agregar departamento
+## Agregar departamento
 <p align="center">
-  <img src=employes system 4.png" width="700">
+  <img src="employes system 4.png" width="700">
 </p>
 
 <p align="center">
-  <b>Figura 1.</b> Agregar departamento.
+  <b>Figura 4.</b> Agregar departamento.
 </p>
+
+---
 
 # Tecnologías utilizadas
 
